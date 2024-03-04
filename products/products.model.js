@@ -3,11 +3,13 @@ const products = [
     id: 'red-shoe',
     description: 'Red Shoe',
     price: 42.12,
+    reviews: [],
   },
   {
     id: 'blue-jean',
     description: 'Blue Jean',
     price: 55.23,
+    reviews: [],
   },
 ];
 
@@ -27,8 +29,20 @@ function getProductById(id) {
   });
 }
 
+function addNewProduct(id, description, price) {
+  const newProduct = {
+    id,
+    price,
+    description,
+    reviews: [],
+  };
+  products.push(newProduct);
+  return newProduct;
+}
+
 module.exports = {
   getAllProducts,
   getProductsByPrice,
   getProductById,
+  addNewProduct,
 };
